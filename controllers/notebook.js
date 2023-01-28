@@ -31,7 +31,11 @@ router.get('/notebook', (req, res)=>{
 
 
 //Delete
-
+router.delete('/notebook/:id', (req, res)=>{
+    Note.findByIdAndDelete(req.params.id, (err, deletedNote)=>{
+        res.redirect('/notebook');
+    })
+})
 
 //Update
 router.put('/notebook/:id', (req, res)=>{
