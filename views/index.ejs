@@ -11,12 +11,10 @@
 
 <body>
     <h1 class="title">Notebook</h1>
-        <div class="notesView">
-            <div class="threethings">
+            <div class="threeThings">
             <h3>About</h3>
             <h3>Login</h3>
             <h3>Logout</h3>
-        </div>
         </div>
     <ul class="clear">
         <li>My Notes</li>
@@ -26,6 +24,7 @@
         <li>Deleted</li>
     </ul>
     <h3>List of Notes</h3>
+    <a href="/notebook/new">Add a New Note</a>
     <ul>
         <li>
             <% notebook.forEach(note=>{ %>

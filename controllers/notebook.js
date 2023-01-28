@@ -28,7 +28,9 @@ router.get('/notebook', (req, res)=>{
 });
 
 //New
-
+router.get('/notebook/new', (req, res)=>{
+    res.render('new.ejs')
+});
 
 //Delete
 router.delete('/notebook/:id', (req, res)=>{
@@ -45,7 +47,12 @@ router.put('/notebook/:id', (req, res)=>{
 });
 
 //Create
-
+router.post('/notebook', (req, res)=>{
+    Note.create(req.body, (err, createdNote)=>{
+        console.log(err);
+        res.redirect('/notebook')
+    })
+})
 
 //Edit
 router.get('/notebook/:id/edit', (req, res)=>{

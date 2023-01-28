@@ -2,22 +2,13 @@
     float: left;
 }
 
-.notesView{
-    /* display: flex; */
-    /* justify-content: space-between; */
-    /* margin-right: auto; */
-    width: 100%;
-}
-
-.threethings{
+.threeThings h3{
     float: right;
-}
-
-.threethings h3{
     display: inline;
-    margin-left: 10px;
+    margin-left: 50px;
 }
 
-.clear{
+/* make sure that the threeThings stay underneath title */
+.clear{ 
     clear:both;
 }
