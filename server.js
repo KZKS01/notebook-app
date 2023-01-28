@@ -2,6 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const notesRouter =require('./controllers/notebook');
+const methodOverride = require('method-override');
 
 
 //initialize the application
@@ -24,7 +25,9 @@ db.on('connected', () => console.log('mongo connected'));
 
 
 //mount middleware
-
+app.use(express.urlencoded({extended: false}))
+app.use(express.static('public')); 
+app.use(methodOverride('_method'));
 //mount routes
 app.use(notesRouter);
 

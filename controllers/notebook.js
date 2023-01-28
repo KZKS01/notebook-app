@@ -7,9 +7,11 @@ const Note = require('../models/note');//the model object, constructor function 
 //SEED ROUTE
 router.get('/notebook/seed', (req,res)=>{
     //reset database and recreate notes
-    Notebook.deleteMany({}, (err, result)=>{//empty object will delete everything
+    Note.deleteMany({}, (err, result)=>{//empty object will delete everything
     //result shows how many objects are deleted
-    Notebook.create(data, (err, notebook)=>{
+    Note.create(data, (err, notebook)=>{
+        console.log(err)
+        console.log(notebook)
         res.redirect('/notebook');
     });
 
@@ -20,9 +22,35 @@ router.get('/notebook/seed', (req,res)=>{
 router.get('/notebook', (req, res)=>{
     Note.find({}, (error, allNotes)=>{
         res.render('index.ejs', {
-            Note: allNotes
+            notebook: allNotes
         });
     });
 });
+
+//New
+
+
+//Delete
+
+
+//Update
+
+
+//Create
+
+
+//Edit
+
+
+//Show
+router.get('/notebook/:id', (req, res)=>{
+    Note.findById(req.params.id, (err, foundNote)=>{
+        // console.log(foundNote)
+        res.render('show.ejs', {
+            note: foundNote,
+        });
+    });
+});
+
 
 module.exports = router;

@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>All Notes</title>
 </head>
+
 <body>
-    <h1>Notebook Index Page</h1>
+    <h1 class="title">Notebook</h1>
+        <div class="notesView">
+            <div class="threethings">
+            <h3>About</h3>
+            <h3>Login</h3>
+            <h3>Logout</h3>
+        </div>
+        </div>
+    <ul class="clear">
+        <li>My Notes</li>
+        <li>Favorite</li>
+        <li>Recent</li>
+        <li>Shared</li>
+        <li>Deleted</li>
+    </ul>
+    <h3>List of Notes</h3>
+    <ul>
+        <li>
+            <% notebook.forEach(note=>{ %>
+            <a href="/notebook/<%= note._id %>">
+                <%= note.title %>
+            </a>
+            <form action="/notebook/<%= note._id %>?_method=DELETE" method="post">
+            <input type="submit" value="DELETE"/>
+            </form>
+        </li>
+        <a href="/notebook/<%= note._id %>/edit">Edit</a>
+        <% }) %>
+    </ul>
 </body>
+
 </html>
