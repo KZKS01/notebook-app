@@ -31,12 +31,12 @@
             <% notebook.forEach(note=>{ %>
             <a href="/notebook/<%= note._id %>">
                 <%= note.title %>
-            </a>
+            </a><br>
+            <a href="/notebook/<%= note._id %>/edit"><button>Edit</button></a>
             <form action="/notebook/<%= note._id %>?_method=DELETE" method="post">
             <input type="submit" value="DELETE"/>
             </form>
         </li>
-        <a href="/notebook/<%= note._id %>/edit">Edit</a>
         <% }) %>
     </ul>
 </body>

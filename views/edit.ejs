@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit a Note</title>
+</head>
+<body>
+    <h1>Edit Note</h1>
+    <form action="/notebook/<%= note._id %>?_method=PUT" method="POST">
+    Title: <input type="text" name="title" value="<%= note.title %> ">
+    Content: <input type="text" name="content" value="<%= note.content %> "> 
+    <input type="submit" value="Submit Changes">
+</form>
+</body>
+</html>

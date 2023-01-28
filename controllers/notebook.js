@@ -34,13 +34,23 @@ router.get('/notebook', (req, res)=>{
 
 
 //Update
-
+router.put('/notebook/:id', (req, res)=>{
+    Note.findByIdAndUpdate(req.params.id, req.body, (err, note)=> {
+        res.redirect('/notebook');
+    });
+});
 
 //Create
 
 
 //Edit
-
+router.get('/notebook/:id/edit', (req, res)=>{
+    Note.findById(req.params.id, (err, foundNote)=>{
+        res.render('edit.ejs', {
+            note: foundNote,
+        });
+    });
+});
 
 //Show
 router.get('/notebook/:id', (req, res)=>{
