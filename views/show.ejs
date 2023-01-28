@@ -7,9 +7,7 @@
     <title>Note Show Page</title>
 </head>
 <body>
-    <nav>
-        <a href="/notebook">Back to Notebook Index</a>
-      </nav>
+    <%- include('./partials/nav') %> 
       <h1><%= note.title %></h1>
       <p>Author: <%= note.author%></p>
       <br>

@@ -7,6 +7,7 @@
     <title>Edit a Note</title>
 </head>
 <body>
+    <%- include('./partials/nav') %> 
     <h1>Edit Note</h1>
     <form action="/notebook/<%= note._id %>?_method=PUT" method="POST">
     Title: <input type="text" name="title" value="<%= note.title %> ">
