@@ -10,6 +10,7 @@ const noteSchema = new Schema({
     author: {type: String, required: true},
     date: {type: Date, required: true},
     content: {type: String, required: false},
+    user: {type: Schema.Types.ObjectId, ref: 'User'}
 });
 
 //exports Mongoose model 'note', which is based on the noteSchema, so that it can be used in other parts of the app to interact with 'Note' in MongoDB database
