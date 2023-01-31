@@ -12,10 +12,13 @@
 <body>
     <h1 class="title">Notebook</h1>
             <div class="threeThings">
-            <h3>About</h3>
-            <h3><a href="/signup">Signup</a></h3>
-            <h3><a href="/login">Login</a></h3>
-            <h3><a href="/notebook">Logout</a></h3>
+                <% if(locals.user) {%>
+                    <h3><a href="/logout">Logout</a></h3>
+                    <% } else { %> 
+                        <h3><a href="/signup">Signup</a></h3>
+                        <h3><a href="/login">Login</a></h3>
+                <% }; %> 
+                <h3>About</h3>
         </div>
     <ul class="clear">
         <li>My Notes</li>
