@@ -1,3 +1,30 @@
+/* home page */
+body{
+    background-color: rgb(217, 242, 250);
+}
+
+#home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: lightblue;
+    padding: 150px;
+}
+
+#welcome{
+    font-family: 'Fredericka the Great', cursive;
+    color: rgb(1, 78, 141);
+    font-size: 80px;
+}
+
+#intro{
+    font-family: 'Dancing Script', cursive;
+    color:rgb(1, 78, 141);
+    font-size: 65px;
+}
+
+/* index page */
 .title{
     float: left;
 }
@@ -9,6 +36,6 @@
 }
 
 /* make sure that the threeThings stay underneath title */
-.clear{ 
+.clear2{ 
     clear:both;
 }

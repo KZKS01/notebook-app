@@ -57,9 +57,6 @@ function isAuthenticated(req, res, next) {
 //mount routes
 app.get('/', (req, res)=> res.render('home.ejs')); //home page route
 
-
-
-
 app.use(usersRouter); //use line 5
 //app.use(notesRouter); 
 app.use(isAuthenticated, notesRouter); 

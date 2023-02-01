@@ -11,37 +11,35 @@
 
 <body>
     <h1 class="title">Notebook</h1>
-            <div class="threeThings">
-                <% if(locals.user) {%>
-                    <h3><a href="/logout">Logout</a></h3>
-                    <% } else { %> 
-                        <h3><a href="/signup">Signup</a></h3>
-                        <h3><a href="/login">Login</a></h3>
-                <% }; %> 
-                <h3><a href="/about">About</a></h3>
-        </div>
-    <ul class="clear">
+    <div class="threeThings">
+        <% if(locals.user) {%>
+        <h3><a href="/logout">Logout</a></h3>
+        <% } else { %>
+        <h3><a href="/signup">Signup</a></h3>
+        <h3><a href="/login">Login</a></h3>
+        <% }; %>
+    </div>
+    <!-- <ul class="clear1">
         <li>My Notes</li>
         <li>Favorite</li>
         <li>Recent</li>
         <li>Shared</li>
         <li>Deleted</li>
-    </ul>
-    <h3>List of Notes</h3>
+    </ul> -->
+    <div class="clear2">
+        <h3>List of Notes</h3>
+    </div>
     <a href="/notebook/new">Add a New Note</a>
     <ul>
+        <% notebook.forEach(note=>{ %>
         <li>
-            <% notebook.forEach(note=>{ %>
-            <a href="/notebook/<%= note._id %>">
-                <%= note.title %>
-            </a><br>
+            <a href="/notebook/<%= note._id %>"><%= note.title %></a><br>
             <a href="/notebook/<%= note._id %>/edit"><button>Edit</button></a>
             <form action="/notebook/<%= note._id %>?_method=DELETE" method="post">
-            <input type="submit" value="DELETE"/>
+                <input type="submit" value="DELETE" />
             </form>
         </li>
         <% }) %>
     </ul>
 </body>
-
 </html>

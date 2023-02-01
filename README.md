@@ -1,6 +1,6 @@
 # **Notebook App**
 
-A description of your app. Background info of the app is a nicetouch.
+# description: this is a CRUD app
 <br><br>
 
 ## Screenshot:
@@ -24,10 +24,13 @@ Click [here] (https://notebook-app.herokuapp.com/) to see the deployed app
 
 ## Next Steps:
 * More features: 
-  * favorite notes
-  * recent notes
-  * share notes
-  * deleted notes
+  * create checklists in notes
+  * create sketches in notes
+  * record audio
+  * list of favorite notes 
+  * list of recent notes
+  * list of share notes
+  * list of deleted notes
   * show edited history 
   <br><br>
  * More user features: 
