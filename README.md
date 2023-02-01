@@ -1,22 +1,36 @@
 # **Notebook App**
+
 A description of your app. Background info of the app is a nicetouch.
+<br><br>
 
 ## Screenshot:
 Images of your actual app.
+<br><br>
 
 ## Technologies Used:
 * JavaScript
 * HTML
 * CSS
-* Express
+* Express.js
 * Node.js
 * MongoDB
 * Mongoose
 * Heroku
-
+<br><br>
 
 ## Getting Started: 
-In this section include the link to your deployed app and anyinstructions you deem important.
+Click [here] (https://notebook-app.herokuapp.com/) to see the deployed app
+<br><br>
 
 ## Next Steps:
-Planned future enhancements (icebox items).
+* More features: 
+  * favorite notes
+  * recent notes
+  * share notes
+  * deleted notes
+  * show edited history 
+  <br><br>
+ * More user features: 
+   * forget password
+   * collaborate on a shared note with another user
+   
