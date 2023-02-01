@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema; //shortcus var
+const Schema = mongoose.Schema; //shortcut var
 
 const userSchema = new Schema({
     email: {
