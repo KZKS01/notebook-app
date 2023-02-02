@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,23 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>Login Page</title>
 </head>
-<body>
-    <%- include('./partials/nav') %>
-    <h1>Please Login</h1>
-    <form action="/login" method="POST" autocomplete="off">
-    <label>
-        Email: <input type="email" name="email" required>
-    </label>
-    <label>
-        Password: <input type="password" name="password" required>
-    </label>
-    <input type="submit" value="Login">
-</form>
+
+<body id="loginBody">
+    <div id="login">
+        <h1 id="pleaseLogin">Please Login</h1>
+        <form action="/login" method="POST" autocomplete="off">
+            <label>
+                Email: <input type="email" name="email" required>
+            </label><br><br>
+            <label>
+                Password: <input type="password" name="password" required>
+            </label><br><br>
+            <div id="btnsL">
+                <input id="loginBtn" type="submit" value="Login">
+        </form>
+        <a id="signupUrl" href="/signup"><button>Sign Up</button></a>
+    </div>
+    </div>
 </body>
+
 </html>
