@@ -11,7 +11,7 @@
     <%- include('./partials/nav') %> 
       <img src="<%= note.photo %> " alt="<%= note.title %> ">
       <h1><%= note.title %></h1>
-      <p>Author: <%= note.author%></p>
+      <p>Created By: <%= note.createdBy.email.split('@')[0]%></p>
       <br>
       <p>Date: <%= note.date%></p>
       <br>

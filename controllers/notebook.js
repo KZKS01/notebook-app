@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const data = require('../data');//seed data
 const Note = require('../models/note');//the model object, constructor function is always capitalized
+const user = require('../models/user');
 const cloudinary = require('cloudinary').v2;//request cloudinary library
 
 //SEED ROUTE
@@ -10,6 +11,7 @@ router.get('/notebook/seed', (req,res)=>{
     //reset database and recreate notes
     Note.deleteMany({}, (err, result)=>{//empty object will delete everything
     //result shows how many objects are deleted
+});
     Note.create(data, (err, notebook)=>{
         console.log(err)
         console.log(notebook)
@@ -17,11 +19,10 @@ router.get('/notebook/seed', (req,res)=>{
     });
 
     });
-});
 
 //Index
 router.get('/notebook', (req, res)=>{
-    Note.find({}, (error, allNotes)=>{
+    Note.find({createdBy: req.session.userId}, (error, allNotes)=>{
         res.render('index.ejs', {
             notebook: allNotes
         });
@@ -30,7 +31,13 @@ router.get('/notebook', (req, res)=>{
 
 //New
 router.get('/notebook/new', (req, res)=>{
-    res.render('new.ejs')
+    user.find({}, (err, users)=>{
+        if(err) {
+            console.log(err);
+        } else {
+            res.render('new.ejs', {users: users});
+        }
+    })
 });
 
 //Delete
@@ -76,7 +83,9 @@ router.get('/notebook/:id/edit', (req, res)=>{
 
 //Show
 router.get('/notebook/:id', (req, res)=>{
-    Note.findById(req.params.id, (err, foundNote)=>{
+    Note.findById(req.params.id)
+        .populate('createdBy')
+        .exec((err, foundNote)=>{
         // console.log(foundNote)
         res.render('show.ejs', {
             note: foundNote,

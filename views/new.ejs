@@ -10,12 +10,19 @@
 </head>
 
 <body>
-    <%- include('./partials/nav') %> 
+    <%- include('./partials/nav') %>
     <h1>New Note Page</h1>
     <!-- enctype will make sure req.files is defined -->
-    <form action="/notebook" method="POST" enctype="multipart/form-data"> 
+    <form action="/notebook" method="POST" enctype="multipart/form-data">
         Title: <input type="text" name="title"><br>
-        Author: <input type="text" name="author"><br>
+        <span>
+            Created By:
+            <select name="createdBy">
+                <% for(var i = 0; i < users.length; i++){ %>
+                <option value="<%= users[i]._id %>"><%= users[i].email.split('@')[0] %> </option>
+                <% }; %>
+            </select>
+        </span> <br>
         Date: <input type="date" name="date"><br>
         Content: <textarea name="content" cols="50" rows="10"></textarea><br>
         Photo: <input type="file" name="photo">
