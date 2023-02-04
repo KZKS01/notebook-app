@@ -12,11 +12,13 @@
 <body>
     <%- include('./partials/nav') %> 
     <h1>New Note Page</h1>
-    <form action="/notebook" method="POST">
+    <!-- enctype will make sure req.files is defined -->
+    <form action="/notebook" method="POST" enctype="multipart/form-data"> 
         Title: <input type="text" name="title"><br>
         Author: <input type="text" name="author"><br>
         Date: <input type="date" name="date"><br>
         Content: <textarea name="content" cols="50" rows="10"></textarea><br>
+        Photo: <input type="file" name="photo">
         <input type="submit" value="Submit Changes">
     </form>
 </body>

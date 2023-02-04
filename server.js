@@ -5,7 +5,8 @@ const session = require('express-session');
 const notesRouter = require('./controllers/notebook');
 const usersRouter = require('./controllers/users'); //to use users.js
 const methodOverride = require('method-override');
-
+const fileUpload = require('express-fileupload');
+const cloudinary = require('cloudinary').v2;//request cloudinary library
 
 //initialize the application
 const app = express();
@@ -15,6 +16,11 @@ require('dotenv').config();
 const PORT = process.env.PORT;
 const DATABASE_URL = process.env.DATABASE_URL;
 
+cloudinary.config({ 
+    cloud_name: process.env.CLOUD_NAME, 
+    api_key: process.env.API_KEY, 
+    api_secret: process.env.API_SECRET  
+  });
 
 //establish connection to mongodb
 mongoose.set('strictQuery', false);
@@ -36,12 +42,7 @@ app.use(session({
     resave: false, //keep on reusing the data that is originally created
     saveUninitialized: false, //
 })); //this need to be above routes
-
-//custom middleware to inspect session store - for development purpose
-// app.use((req, res, next)=>{
-//     console.log(req.session);
-//     next();//ensures that the lines below will run
-// })
+app.use(fileUpload({ createParentPath: true }));
 
 // authentication middleware
 function isAuthenticated(req, res, next) {
@@ -51,7 +52,7 @@ function isAuthenticated(req, res, next) {
     } else {
         res.locals.user = req.session.userId //req.session.userId is the current login user
     }; 
-    next();//this makes sure that the code below will run
+    next();//ensures the code below will run
 };
 
 //mount routes

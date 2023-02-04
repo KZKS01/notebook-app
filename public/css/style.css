@@ -12,18 +12,18 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: lightblue;
+    background-color: rgb(165, 214, 255);
     padding: 150px;
 }
 
 #welcome{
-    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Solitreo', cursive;
     color: rgb(1, 78, 141);
     font-size: 80px;
 }
 
 #intro{
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Solitreo', cursive;
     color:rgb(1, 78, 141);
     font-size: 65px;
 }
@@ -43,6 +43,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 10%;
     box-shadow:
     inset 0 0 10px rgb(170, 227, 253), /* bottom */
     inset 0 0 10px rgb(170, 227, 253), /* top */

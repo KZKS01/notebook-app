@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const data = require('../data');//seed data
 const Note = require('../models/note');//the model object, constructor function is always capitalized
+const cloudinary = require('cloudinary').v2;//request cloudinary library
 
 //SEED ROUTE
 router.get('/notebook/seed', (req,res)=>{
@@ -48,11 +49,21 @@ router.put('/notebook/:id', (req, res)=>{
 
 //Create
 router.post('/notebook', (req, res)=>{
-    Note.create(req.body, (err, createdNote)=>{
-        console.log(err);
-        res.redirect('/notebook')
-    })
-})
+    console.log(req.files);
+    //use req.files object(contains all uploaded files) to retrieve a file from a multipart/form-data request. 
+    const photo = req.files.photo;
+    //The property photos is used to retrieve the file with the key "photos" from the req.files object. The retrieved file will be stored in the photos variable.
+    photo.mv(`./uploads/${photo.name}`);//mv is a fn to move the file elsewhere on the server
+    //upload our file to cloudinary, cloudinary will give us a url for that file
+    cloudinary.uploader.upload(`./uploads/${photo.name}`, (err, result)=>{ 
+        console.log(err, result);
+        req.body.photo = result.secure_url;//secure_url can be found from result
+        Note.create(req.body, (err, createdNote)=>{
+            console.log(err);
+            res.redirect('/notebook');
+        });
+    });
+});
 
 //Edit
 router.get('/notebook/:id/edit', (req, res)=>{
