@@ -12,9 +12,10 @@ const noteSchema = new Schema({
         required: true,
         ref: 'User', //tells mongoose which model to look up
     },
-    date: {type: Date, required: true},
+    // date: {type: Date, required: true},
     content: {type: String, required: false},
     photo: {type: String, required: false},
+    timestamp: {type: Date, default: Date.now},
 });
 
 //exports Mongoose model 'note', which is based on the noteSchema, so that it can be used in other parts of the app to interact with 'Note' in MongoDB database

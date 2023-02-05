@@ -12,7 +12,7 @@
     <h1><%= note.title %></h1>
     <p>Created By: <%= note.createdBy.email.split('@')[0]%></p>
     <br>
-    <p>Date: <%= note.date%></p>
+    <p>Date: <%= note.timestamp ? note.timestamp.toLocaleDateString() : 'N/A' %></p>    
     <br>
     <p>Content: <%= note.content%></p>
     <% if(note.photo) {%> 
