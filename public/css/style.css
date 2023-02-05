@@ -1,5 +1,5 @@
 body{
-    background: linear-gradient(to right, #b4edfc, #a9c8f0);
+    background: linear-gradient(to right, #c7ecf7, #bdd4f3);
 }
 /* nav page */
 #nav{
@@ -63,7 +63,23 @@ body{
     margin-top: 30px;
 }
 
+#btnsL input[type="submit"]{
+    font-size: 20px;
+    font-family: 'Arial', sans-serif;
+  }
 
+#signupUrl{
+    font-size: 20px;
+    font-family: 'Arial', sans-serif;
+    display: inline-block;
+    padding: 8px;
+    background-color: rgb(231, 229, 229);
+    border: 1px solid rgb(87, 86, 86);
+    border-radius: 2px;
+    text-decoration: none;
+    color: black;
+  }
+  
 /* index page */
 .title{
     float: left;

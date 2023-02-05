@@ -9,12 +9,15 @@
 </head>
 <body>
     <%- include('./partials/nav') %> 
-      <img src="<%= note.photo %> " alt="<%= note.title %> ">
-      <h1><%= note.title %></h1>
-      <p>Created By: <%= note.createdBy.email.split('@')[0]%></p>
-      <br>
-      <p>Date: <%= note.date%></p>
-      <br>
-      <p>Content: <%= note.content%></p>
+    <h1><%= note.title %></h1>
+    <p>Created By: <%= note.createdBy.email.split('@')[0]%></p>
+    <br>
+    <p>Date: <%= note.date%></p>
+    <br>
+    <p>Content: <%= note.content%></p>
+    <% if(note.photo) {%> 
+    <img src="<%= note.photo %>" alt="<%=`Image of ${note.title}`%>">
+    <% console.log(note.photo)%> 
+    <% } %> 
 </body>
 </html>

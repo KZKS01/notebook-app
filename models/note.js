@@ -6,7 +6,6 @@ const Schema = mongoose.Schema;
 //creates a new schema object, an instance of 'Schema' class
 const noteSchema = new Schema({
     //defines properties of the Note object
-    photo: {type: String, required: false},
     title: {type: String, required: true},
     createdBy: {
         type: Schema.Types.ObjectId, 
@@ -15,6 +14,7 @@ const noteSchema = new Schema({
     },
     date: {type: Date, required: true},
     content: {type: String, required: false},
+    photo: {type: String, required: false},
 });
 
 //exports Mongoose model 'note', which is based on the noteSchema, so that it can be used in other parts of the app to interact with 'Note' in MongoDB database
