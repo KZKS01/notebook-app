@@ -10,17 +10,21 @@
 </head>
 
 <body>
-    <%- include('./partials/nav') %>
-    <h1>Sign Up</h1>
-    <form action="/signup" method="POST">
-        <label>
-            Email: <input type="email" name="email" required>
-        </label>
-        <label>
-            Password: <input type="password" name="password" required>
-        </label>
-        <input type="submit" value="Sign Up">
-    </form>
+    <div id="signupBody">
+        <h1>Sign Up</h1>
+        <div id="signupBox">
+            <form action="/signup" method="POST">
+                <label>
+                    Email: <input type="email" name="email" required>
+                </label><br>
+                <label>
+                    Password: <input type="password" name="password" required>
+                </label><br>
+                <div><a href="/login">Sign in instead</a></div>
+                <input type="submit" value="Sign Up">
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

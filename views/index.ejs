@@ -10,10 +10,10 @@
 </head>
 
 <body>
-    <h1 class="title">Notebook</h1>
+    <h1 class="title">My Notebook</h1>
     <div class="threeThings">
         <% if(locals.user) {%>
-        <h3><a href="/logout">Logout</a></h3>
+        <h3><a id="logOut" href="/logout">Logout</a></h3>
         <% } else { %>
         <h3><a href="/signup">Signup</a></h3>
         <h3><a href="/login">Login</a></h3>
@@ -27,13 +27,13 @@
         <li>Deleted</li>
     </ul> -->
     <div class="clear2">
-        <h3>List of Notes</h3>
+        <h2>List of Notes</h2>
     </div>
-    <a href="/notebook/new">Add a New Note</a>
-    <ul>
+    <a id="addNew" href="/notebook/new">Add a New Note</a>
+    <ul id="listOfNotes">
         <% notebook.forEach(note=>{ %>
-        <li>
-            <a href="/notebook/<%= note._id %>"><%= note.title %></a><br>
+        <li id="note">
+            <a href="/notebook/<%= note._id %>"><%= note.title %></a>
             <a href="/notebook/<%= note._id %>/edit"><button>Edit</button></a>
             <form action="/notebook/<%= note._id %>?_method=DELETE" method="post">
                 <input type="submit" value="DELETE" />

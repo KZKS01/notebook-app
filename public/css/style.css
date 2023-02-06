@@ -1,9 +1,23 @@
 body{
-    background: linear-gradient(to right, #c7ecf7, #bdd4f3);
+    background: rgb(226, 225, 225);
 }
+#nav a:hover, #logOut:hover, #listOfNotes a:hover,#addNew:hover {
+    color: red;
+}
+
 /* nav page */
 #nav{
     list-style-type: none;
+}
+#nav li{
+    padding: 10px;
+}
+
+#nav a{
+    font-size: 20px;
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(18, 30, 51);
 }
 
 /* home page */
@@ -12,24 +26,25 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(165, 214, 255);
-    padding: 150px;
+    /* background-color: rgb(185, 235, 250); */
+    padding: 100px;
 }
 
 #welcome{
     font-family: 'Solitreo', cursive;
-    color: rgb(1, 78, 141);
+    color: rgb(18, 30, 51);
     font-size: 80px;
 }
 
 #intro{
     font-family: 'Solitreo', cursive;
-    color:rgb(1, 78, 141);
+    color: rgb(18, 30, 51);
     font-size: 65px;
 }
 
-/* login page */
-#loginBody{
+
+/* login, signup page */
+#signupBody, #loginBody{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,7 +58,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 10%;
+    border-radius: 10px;
     box-shadow:
     inset 0 0 10px rgb(170, 227, 253), /* bottom */
     inset 0 0 10px rgb(170, 227, 253), /* top */
@@ -75,11 +90,23 @@ body{
     padding: 8px;
     background-color: rgb(231, 229, 229);
     border: 1px solid rgb(87, 86, 86);
-    border-radius: 2px;
+    border-radius: 10px;
     text-decoration: none;
     color: black;
   }
-  
+
+/* signup page */
+#signupBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    border: solid rgb(116, 180, 218) 1px;
+    margin: 250px 550px; 
+    width: 400px;
+    height: 400px;
+}
+
 /* index page */
 .title{
     float: left;
@@ -91,7 +118,50 @@ body{
     margin-left: 50px;
 }
 
+#addNew{
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#listOfNotes{
+    list-style-type: none;
+    background-color: rgb(236, 231, 231);
+    padding: 8px;
+    border-radius: 10px;
+}
+
+#note{
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: grid;
+}
+
+li#note a, li#note button, li#note form{
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+li#note button:hover,li#note input:hover {
+    background-color: rgb(125, 191, 252);
+    color: white;
+}
+
+#logOut{
+    text-decoration: none;
+}
+
 /* make sure that the threeThings stay underneath title */
 .clear2{ 
     clear:both;
 }
+
+/* show page */
+
+/* edit page */
+
+/* new page */
