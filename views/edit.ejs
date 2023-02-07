@@ -14,8 +14,9 @@
     <div id="editBody">
         <h1>Edit Note</h1>
         <form action="/notebook/<%= note._id %>?_method=PUT" method="POST">
-            Title: <input type="text" name="title" value="<%= note.title %> "><br><br>
-            Content: <br><textarea type="text" name="content" cols="200" rows="30"><%= note.content %></textarea><br><br>
+            <strong>Title: </strong><input type="text" name="title" value="<%= note.title %> "><br><br>
+            <strong>Content: </strong><br><textarea type="text" name="content" cols="200" rows="30"><%= note.content %></textarea><br><br>
+            <strong>Photo: </strong><input type="file" name="photo" value="<%= note.photo %> ">
             <input type="submit" value="Submit Changes">
         </form>
     </div>

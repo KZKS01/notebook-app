@@ -15,7 +15,7 @@
         <h1>Create New Note</h1>
         <!-- enctype will make sure req.files is defined -->
         <form action="/notebook" method="POST" enctype="multipart/form-data">
-            Title: <input type="text" name="title"><br>
+            <strong>Title: </strong><input type="text" name="title"><br>
             <input type="hidden" name="createdBy" value="<%= locals.user %>">
             <!-- <select name="createdBy"> -->
             <!-- <% for(var i = 0; i < users.length; i++){ %> -->
@@ -24,8 +24,8 @@
             <!-- </select> -->
             <br>
             <!-- Date: <input type="datetime-local" name="date"><br> -->
-            Content: <br><textarea name="content" cols="200" rows="30"></textarea><br>
-            Photo: <input type="file" name="photo">
+            <strong>Content: </strong><br><textarea name="content" cols="200" rows="30"></textarea><br>
+            <strong>Photo: </strong><input type="file" name="photo">
             <input type="submit" value="Submit Changes">
         </form>
     </div>

@@ -177,7 +177,7 @@ li#note button:hover,li#note input:hover {
 }
 
 /* make sure that the threeThings stay underneath title */
-.clear2{ 
+#showBody, .clear2{ 
     clear:both;
 }
 
@@ -189,6 +189,7 @@ li#note button:hover,li#note input:hover {
     padding: 8px;
     font-size: 20px;
 }
+
 
 /* edit page */
 
