@@ -1,10 +1,11 @@
 # **Notebook App**
 
 # description: this is a CRUD app
+This is an app for users to create, view and edit their notes. 
 <br><br>
 
 ## Screenshot:
-Images of your actual app.
+![appscreenshot](https://asset.cloudinary.com/dhjajmvyz/13461413e58cf7d1d0ff906f9c45d388)
 <br><br>
 
 ## Technologies Used:
