@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,17 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>Edit a Note</title>
 </head>
+
 <body>
-    <%- include('./partials/nav') %> 
-    <h1>Edit Note</h1>
-    <form action="/notebook/<%= note._id %>?_method=PUT" method="POST">
-    Title: <input type="text" name="title" value="<%= note.title %> ">
-    Content: <input type="text" name="content" value="<%= note.content %> "> 
-    <input type="submit" value="Submit Changes">
-</form>
+    <%- include('./partials/nav') %>
+    <div id="editBody">
+        <h1>Edit Note</h1>
+        <form action="/notebook/<%= note._id %>?_method=PUT" method="POST">
+            Title: <input type="text" name="title" value="<%= note.title %> "><br><br>
+            Content: <br><textarea type="text" name="content" cols="200" rows="30"><%= note.content %></textarea><br><br>
+            <input type="submit" value="Submit Changes">
+        </form>
+    </div>
 </body>
+
 </html>

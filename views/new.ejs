@@ -11,22 +11,24 @@
 
 <body>
     <%- include('./partials/nav') %>
-    <h1>New Note Page</h1>
-    <!-- enctype will make sure req.files is defined -->
-    <form action="/notebook" method="POST" enctype="multipart/form-data">
-        Title: <input type="text" name="title"><br>
-        <input type="hidden" name="createdBy" value="<%= locals.user %>">
-        <!-- <select name="createdBy"> -->
-        <!-- <% for(var i = 0; i < users.length; i++){ %> -->
-        <!-- <option value="<%= users[i]._id %>"><%= users[i].email.split('@')[0] %> </option> -->
-        <!-- <% }; %> -->
-        <!-- </select> -->
-        <br>
-        <!-- Date: <input type="datetime-local" name="date"><br> -->
-        Content: <textarea name="content" cols="50" rows="10"></textarea><br>
-        Photo: <input type="file" name="photo">
-        <input type="submit" value="Submit Changes">
-    </form>
+    <div id="newBody">
+        <h1>Create New Note</h1>
+        <!-- enctype will make sure req.files is defined -->
+        <form action="/notebook" method="POST" enctype="multipart/form-data">
+            Title: <input type="text" name="title"><br>
+            <input type="hidden" name="createdBy" value="<%= locals.user %>">
+            <!-- <select name="createdBy"> -->
+            <!-- <% for(var i = 0; i < users.length; i++){ %> -->
+            <!-- <option value="<%= users[i]._id %>"><%= users[i].email.split('@')[0] %> </option> -->
+            <!-- <% }; %> -->
+            <!-- </select> -->
+            <br>
+            <!-- Date: <input type="datetime-local" name="date"><br> -->
+            Content: <br><textarea name="content" cols="200" rows="30"></textarea><br>
+            Photo: <input type="file" name="photo">
+            <input type="submit" value="Submit Changes">
+        </form>
+    </div>
 </body>
 
 </html>

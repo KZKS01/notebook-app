@@ -16,12 +16,14 @@
             <form action="/signup" method="POST">
                 <label>
                     Email: <input type="email" name="email" required>
-                </label><br>
+                </label><br><br>
                 <label>
                     Password: <input type="password" name="password" required>
                 </label><br>
-                <div><a href="/login">Sign in instead</a></div>
-                <input type="submit" value="Sign Up">
+                <div id="inAndUp">
+                    <a href="/login">Sign in instead</a>
+                    <input id="SignupBtn" type="submit" value="Sign Up">
+                </div>
             </form>
         </div>
     </div>
