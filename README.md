@@ -5,7 +5,7 @@ This is an app for users to create, view and edit their notes.
 <br><br>
 
 ## Screenshot:
-![appscreenshot](https://asset.cloudinary.com/dhjajmvyz/13461413e58cf7d1d0ff906f9c45d388)
+![appscreenshot](https://github.com/KZKS01/notebook-app/blob/main/uploads/app%20screenshot.png?raw=true)
 <br><br>
 
 ## Technologies Used:
