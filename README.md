@@ -20,7 +20,7 @@ This is an app for users to create, view and edit their notes.
 <br><br>
 
 ## Getting Started: 
-Click ![here] (https://notebook-app.herokuapp.com/) to see the deployed app
+Click [here](https://notebook-app.herokuapp.com/) to see the deployed app
 <br><br>
 
 ## Next Steps:
