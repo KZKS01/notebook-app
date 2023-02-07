@@ -2,7 +2,7 @@ body{
     background: rgb(240, 239, 239);
     font-family: 'Arial', sans-serif;
 }
-#nav a:hover, #logOut:hover, #listOfNotes a:hover,#addNew:hover {
+#nav a:hover, #logOut:hover, #listOfNotes a:hover,#addNew:hover{
     color: red;
 }
 
@@ -144,6 +144,7 @@ body{
     padding: 5px;
     border-radius: 5px;
     text-decoration: none;
+    font-size: 20px;
 }
 
 #listOfNotes{
@@ -167,7 +168,7 @@ li#note a, li#note button, li#note form{
     margin-bottom: 5px;
 }
 
-li#note button:hover,li#note input:hover {
+li#note button:hover,li#note input:hover, #newBody input[type="submit"]:hover{
     background-color: rgb(125, 191, 252);
     color: white;
 }
@@ -177,7 +178,7 @@ li#note button:hover,li#note input:hover {
 }
 
 /* make sure that the threeThings stay underneath title */
-#showBody, .clear2{ 
+#showBody, .clear2, #newBody, #editBody{ 
     clear:both;
 }
 
@@ -212,3 +213,13 @@ li#note button:hover,li#note input:hover {
 /* edit page */
 
 /* new page */
+#newBody input[type="submit"], #newBody input[type="file"], #listOfNotes{
+    font-size: 20px;
+  }
+
+#note button, #note input{
+    font-size: 17px;
+}  
+#newBody input[type="submit"]{
+    margin-top: 20px;
+}
