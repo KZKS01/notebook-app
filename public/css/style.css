@@ -190,7 +190,25 @@ li#note button:hover,li#note input:hover {
     font-size: 20px;
 }
 
+#showBody h1{
+    border-bottom: 2px solid rgb(216, 213, 213);
+}
 
+#firstTwo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 30%;  /* adjust the width of the container */
+}
+
+#showContent{
+    border-radius: 10px;
+    border: solid rgb(22, 31, 36) 1px;
+    background-color: white;
+    padding: 10px;
+    font-size: 20px;
+    width: 50%
+}
 /* edit page */
 
 /* new page */

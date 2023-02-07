@@ -11,11 +11,12 @@
     <%- include('./partials/nav') %> 
     <div id="showBody">
         <h1><%= note.title %></h1>
+        <div id="firstTwo">
         <p><strong>Created By: </strong><%= note.createdBy.email.split('@')[0]%></p>
-        <br>
         <p><strong>Date: </strong><%= note.timestamp ? note.timestamp.toLocaleDateString() : 'N/A' %></p>    
+        </div>
         <br>
-        <p><strong>Content: </strong><%= note.content%></p>
+        <p><strong>Content: </strong><br><div id="showContent"><%= note.content%></div> </p>
         <% if(note.photo) {%> 
             <img src="<%= note.photo %>" alt="<%=`Image of ${note.title}`%>">
             <!-- <% console.log(note.photo)%>  -->
