@@ -12,8 +12,8 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: 0;
     margin-bottom: 20px;
+    padding-left: 0;
 }
 
 #seeAddNote{
@@ -21,6 +21,14 @@ body{
     flex-direction: row;  
     justify-content: space-between;
     width: 25%; 
+}
+
+#signUpLogin{
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-between;
+    width: 25%; 
+    margin-left: auto
 }
 
 #nav li{

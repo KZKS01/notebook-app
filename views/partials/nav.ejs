@@ -1,24 +1,26 @@
 <nav>
     <ul id="nav">
-        <% if(locals.user) {%> 
-            <div id="seeAddNote">
-        <li>
-            <a href="/notebook">See a List of Notes</a>
-        </li>
-        <li>
-            <a href="/notebook/new">Add New Notes</a>
-        </li>
-    </div>
+        <% if(locals.user) {%>
+        <div id="seeAddNote">
+            <li>
+                <a href="/notebook">See a List of Notes</a>
+            </li>
+            <li>
+                <a href="/notebook/new">Add New Notes</a>
+            </li>
+        </div>
         <li>
             <a href="/logout">Logout</a>
         </li>
-        <% } else { %> 
-        <li>
-            <a href="/signup">Sign Up</a>
-        </li>
-        <li>
-            <a href="/login">Login</a>
-        </li>
-        <% }; %> 
+        <% } else { %>
+        <div id="signUpLogin">
+            <li>
+                <a href="/signup">Sign Up</a>
+            </li>
+            <li>
+                <a href="/login">Login</a>
+            </li>
+            <% }; %>
+        </div>
     </ul>
 </nav>
