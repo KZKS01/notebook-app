@@ -9,8 +9,20 @@ body{
 /* nav page */
 #nav{
     list-style-type: none;
-    float: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 0;
+    margin-bottom: 20px;
 }
+
+#seeAddNote{
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-between;
+    width: 25%; 
+}
+
 #nav li{
     padding: 5px;
 }
@@ -213,7 +225,7 @@ li#note button:hover,li#note input:hover, #newBody input[type="submit"]:hover{
 /* edit page */
 
 /* new page */
-#newBody input[type="submit"], #newBody input[type="file"], #listOfNotes{
+#newBody input[type="submit"], #newBody input[type="file"], #listOfNotes, #editBody input[type="submit"], #editBody input[type="file"], #editBody input, #editBody textarea, #newBody input, #newBody textarea{
     font-size: 20px;
   }
 
