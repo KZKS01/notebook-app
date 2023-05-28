@@ -16,6 +16,7 @@ This is an app for users to create, view and edit their notes.
 * Node.js
 * MongoDB
 * Mongoose
+* Cloudinary
 * Heroku
 <br><br>
 
@@ -33,6 +34,9 @@ Click [here](https://notebook-app.herokuapp.com/) to see the deployed app
   * list of share notes
   * list of deleted notes
   * show edited history 
+  * greetings: welcome, user first name
+  * pre-view page, showing user what it looks like
+  * provide file path when edit
   <br><br>
  * More user features: 
    * forget password

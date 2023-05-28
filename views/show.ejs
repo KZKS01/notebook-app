@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +8,24 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>Note Show Page</title>
 </head>
+
 <body>
-    <%- include('./partials/nav') %> 
+    <%- include('./partials/nav') %>
     <div id="showBody">
         <h1><%= note.title %></h1>
         <div id="firstTwo">
-        <p><strong>Created By: </strong><%= note.createdBy.email.split('@')[0]%></p>
-        <p><strong>Date: </strong><%= note.timestamp ? note.timestamp.toLocaleDateString() : 'N/A' %></p>    
+            <p><strong>Created By: </strong><%= note.createdBy.email.split('@')[0]%></p>
+            <p><strong>Date: </strong><%= note.timestamp ? note.timestamp.toLocaleDateString() : 'N/A' %></p>
         </div>
         <br>
-        <p><strong>Content: </strong><br><div id="showContent"><%= note.content%></div> </p>
-        <% if(note.photo) {%> 
-            <img src="<%= note.photo %>" alt="<%=`Image of ${note.title}`%>">
-            <!-- <% console.log(note.photo)%>  -->
-            <% } %> 
-        </div>
+        <p><strong>Content: </strong><br>
+            <div id="showContent"><%= note.content%></div>
+        </p>
+        <% if(note.photo) {%>
+        <img src="<%= note.photo %>" alt="<%=`Image of ${note.title}`%>">
+        <!-- <% console.log(note.photo)%>  -->
+        <% } %>
+    </div>
 </body>
+
 </html>

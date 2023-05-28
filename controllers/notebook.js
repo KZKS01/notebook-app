@@ -5,6 +5,7 @@ const data = require('../data');//seed data
 const Note = require('../models/note');//the model object, constructor function is always capitalized
 const user = require('../models/user');
 const cloudinary = require('cloudinary').v2;//request cloudinary library
+const mongoose = require('mongoose');
 
 //SEED ROUTE
 router.get('/notebook/seed', (req,res)=>{
@@ -56,7 +57,7 @@ router.put('/notebook/:id', (req, res)=>{
 });
 
 //Create
-router.post('/notebook', (req, res)=>{
+router.post('/notebook/:id', (req, res)=>{
     console.log(req.files);
     //use req.files object(contains all uploaded files) to retrieve a file from a multipart/form-data request. 
     if(req.files) {
@@ -85,16 +86,25 @@ router.get('/notebook/:id/edit', (req, res)=>{
 });
 
 //Show
-router.get('/notebook/:id', (req, res)=>{
-    Note.findById(req.params.id)
-        .populate('createdBy')
-        .exec((err, foundNote)=>{
-        // console.log(foundNote)
-        res.render('show.ejs', {
-            note: foundNote,
-        });
+router.get('/notebook/:id', async (req, res) => {
+  try {
+    const noteId = req.params.id;
+    if (!mongoose.Types.ObjectId.isValid(noteId)) {
+      return res.status(400).send('Invalid note ID.');
+    }
+
+    const foundNote = await Note.findById(noteId).populate('createdBy').exec();
+    if (!foundNote) {
+      return res.status(404).send('Note not found.');
+    }
+    res.render('show.ejs', {
+      note: foundNote
     });
+  } catch (err) {
+    console.log(err);
+  }
 });
+
 
 
 module.exports = router;

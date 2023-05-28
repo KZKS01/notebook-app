@@ -7,7 +7,7 @@ const Schema = mongoose.Schema;
 const noteSchema = new Schema({
     //defines properties of the Note object
     title: {type: String, required: true},
-    createdBy: {
+    createdBy: {//user stuff
         type: Schema.Types.ObjectId, 
         required: true,
         ref: 'User', //tells mongoose which model to look up
