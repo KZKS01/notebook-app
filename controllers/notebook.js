@@ -56,25 +56,41 @@ router.put('/notebook/:id', (req, res)=>{
     });
 });
 
+
 //Create
-router.post('/notebook/:id', (req, res)=>{
+router.post('/notebook', (req, res) => {
     console.log(req.files);
-    //use req.files object(contains all uploaded files) to retrieve a file from a multipart/form-data request. 
-    if(req.files) {
-    const photo = req.files.photo;
-    //The property photos is used to retrieve the file with the key "photos" from the req.files object. The retrieved file will be stored in the photos variable.
-    photo.mv(`./uploads/${photo.name}`);//mv is a fn to move the file elsewhere on the server
+      //use req.files object(contains all uploaded files) to retrieve a file from a multipart/form-data request. 
+    if (req.files) {
+      const photo = req.files.photo;
+      photo.mv(`./uploads/${photo.name}`);//mv is a fn to move the file elsewhere on the server
     //upload our file to cloudinary, cloudinary will give us a url for that file
-    cloudinary.uploader.upload(`./uploads/${photo.name}`, (err, result)=>{ 
-        console.log(err, result);
-        req.body.photo = result.secure_url;//secure_url can be found from result
-    });
-};
-    Note.create(req.body, (err, createdNote)=>{
-        console.log(err);
-        res.redirect('/notebook');
-    });
-});
+      cloudinary.uploader.upload(`./uploads/${photo.name}`, (err, result) => {
+        if (err) {
+          console.error('Error uploading photo to Cloudinary:', err);
+        } else {
+          req.body.photo = result.secure_url;//secure_url can be found from result
+          Note.create(req.body, (err, createdNote) => {
+            if (err) {
+              console.error('Error creating note:', err);
+            } else {
+              res.redirect('/notebook');
+            }
+          });
+        }
+      });
+    } else {
+      Note.create(req.body, (err, createdNote) => {
+        if (err) {
+          console.error('Error creating note:', err);
+        } else {
+          res.redirect('/notebook');
+        }
+      });
+    }
+  });
+  
+
 
 //Edit
 router.get('/notebook/:id/edit', (req, res)=>{
